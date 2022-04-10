@@ -2,9 +2,9 @@ import sys
 import datetime
 import os
 
-def expiredFiles(file, date):
+def expiredFiles(directory, date):
     expiredFiles = []
-    for item in file:
+    for item in directory:
         time = convert(os.path.getmtime(item))
         if time < date:
             print("File Path:",item, "Last Modified:",time, "Bytes:",os.path.getsize(item))
